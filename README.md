@@ -9,8 +9,29 @@ gBizInfo 法人番号 MCPサーバー
 
 - `search_gbiz_info_from_name`
   - 法人名から法人番号を検索します
-- ``search_gbiz_info_from_number`
+- `search_gbiz_info_from_number`
   - 法人番号から法人情報を取得します
+
+## Claude Desktopでの利用方法
+
+`claude_desktop_config.json` に以下のように記述してください
+
+```json
+{
+    "mcpServers": {
+        "gbiz-info": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-gbiz-info@latest"
+            ],
+            "env": {
+                "GBIZ_INFO_API_KEY": "<YOUR_API_TOKEN>"
+            }
+        }
+      }
+}
+```
 
 ## VSCodeでの利用方法
 
@@ -24,10 +45,11 @@ gBizInfo 法人番号 MCPサーバー
             "gbiz-info": {
                 "command": "npx",
                 "args": [
-                    "mcp-gbiz-info@latest",
+                    "-y",
+                    "mcp-gbiz-info@latest"
                 ],
                 "env": {
-                    "GBIZ_INFO_API_KEY": "YOUR_API_TOKEN",
+                    "GBIZ_INFO_API_KEY": "<YOUR_API_TOKEN>"
                 }
             }
         }
