@@ -1,0 +1,31 @@
+{
+  "name": "mcp-gbiz-info",
+  "version": "0.0.1",
+  "description": "ModelContext Protocol Gbiz Info",
+  "author": "tomiyan",
+  "homepage": "https://github.com/tomiyan/mcp-gbiz-info",
+  "bugs": "https://github.com/tomiyan/mcp-gbiz-info/issues",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "mcp-gbiz-info": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "publish-all": "npm publish --access public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "shx": "^0.4.0",
+    "typescript": "^5.8.3"
+  }
+}
