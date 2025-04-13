@@ -22,7 +22,7 @@ async function featchApi(url: string): Promise<Response> {
 
 const server = new McpServer({
   name: "mcp-gbiz-info",
-  version: "0.0.1",
+  version: "0.0.2",
 });
 
 server.tool(
