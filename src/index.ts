@@ -49,5 +49,25 @@ server.tool(
   }
 );
 
+server.tool(
+  "get_gbiz_info_from_corporate_number",
+  "gBiz Infoで法人番号から法人情報を取得する",
+  { 
+    coirporationNumber: z.number().min(1000000000000).max(9999999999999)
+  },
+  async ({ coirporationNumber }) => {
+    const response = await featchApi(`https://info.gbiz.go.jp/hojin/v1/hojin/${coirporationNumber}`);
+    const responseData = await response.json();
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Get result for ${coirporationNumber}: ${JSON.stringify(responseData, null, 2)}`,
+        },
+      ],
+    };
+  }
+);
+
 const transport = new StdioServerTransport();
 await server.connect(transport);
