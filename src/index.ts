@@ -22,12 +22,12 @@ async function featchApi(url: string): Promise<Response> {
 
 const server = new McpServer({
   name: "mcp-gbiz-info",
-  version: "0.0.2",
+  version: "0.0.3",
 });
 
 server.tool(
   "search_gbiz_info_from_name",
-  "gBiz Infoで法人名から法人情報を検索する",
+  "gBiz INFOで法人名から法人情報を検索する",
   {
     name: z.string(),
   },
@@ -49,7 +49,7 @@ server.tool(
 
 server.tool(
   "get_gbiz_info_from_corporate_number",
-  "gBiz Infoで法人番号から法人情報を取得する",
+  "gBiz INFOで法人番号から法人情報を取得する",
   {
     coirporationNumber: z.number().min(1000000000000).max(9999999999999),
   },

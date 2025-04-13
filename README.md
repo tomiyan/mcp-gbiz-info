@@ -1,9 +1,14 @@
 # mcp-gbiz-info
 
-gBizInfo 法人番号 MCPサーバー
-経済産業省の[gBizInfo API](https://info.gbiz.go.jp/api/index.html)を利用して法人番号を取得するためのMCPです
+gBizINFO 法人番号 MCP Server
+経済産業省の[gBizINFO API](https://info.gbiz.go.jp/api/index.html)を利用して法人番号を取得するためのMCP Serverです
 
 [利用申請](https://info.gbiz.go.jp/hojin/api_registration/form)をしてアクセストークンを発行して利用してください
+
+## 注意事項
+
+- gBizINFOは2026年1月に新システムに移行予定のため、APIの仕様などが変わるかもしれません
+- また、データの更新も段階的に停止されるようです
 
 ## 機能
 
@@ -14,7 +19,9 @@ gBizInfo 法人番号 MCPサーバー
 
 ## Claude Desktopでの利用方法
 
-`claude_desktop_config.json` に以下のように記述してください
+1. `claude_desktop_config.json` に以下のように記述してください
+
+macOSだと `~/Library/Application Support/Claude/` にあります
 
 ```json
 {
@@ -32,6 +39,10 @@ gBizInfo 法人番号 MCPサーバー
       }
 }
 ```
+
+2. Claude Desktopを再起動してから、「日本銀行の法人番号を検索して」とプロンプトを入力してみてください
+
+![Claude Desktop](./docs/images/claude.png)
 
 ## VSCodeでの利用方法
 
@@ -56,3 +67,6 @@ gBizInfo 法人番号 MCPサーバー
   }
 }
 ```
+2. Claude Desktopを再起動してから、「日本銀行の法人番号を検索して」とプロンプトを入力してみてください
+
+![VSCode](./docs/images/vscode.png)

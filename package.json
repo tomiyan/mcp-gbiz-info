@@ -1,7 +1,7 @@
 {
   "name": "mcp-gbiz-info",
-  "version": "0.0.2",
-  "description": "ModelContext Protocol Gbiz Info",
+  "version": "0.0.3",
+  "description": "ModelContext Protocol Server Gbiz INFO",
   "author": "tomiyan",
   "homepage": "https://github.com/tomiyan/mcp-gbiz-info",
   "bugs": "https://github.com/tomiyan/mcp-gbiz-info/issues",
