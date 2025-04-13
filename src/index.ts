@@ -7,11 +7,11 @@ async function featchApi(url: string): Promise<Response> {
   const response = await fetch(url, {
     method: "GET",
     headers: {
-      "Accept": "application/json",
-      "X-hojinInfo-api-token": process.env.GBIZ_INFO_API_KEY || ""
-    }
+      Accept: "application/json",
+      "X-hojinInfo-api-token": process.env.GBIZ_INFO_API_KEY || "",
+    },
   });
-  
+
   if (!response.ok) {
     const errorText = await response.text();
     throw new Error(`API request failed with status: ${response.status}, body: ${errorText}`);
@@ -20,18 +20,16 @@ async function featchApi(url: string): Promise<Response> {
   return response;
 }
 
-const server = new McpServer(
-  {
-    name: "mcp-gbiz-info",
-    version: "0.0.1",
-  }
-);
+const server = new McpServer({
+  name: "mcp-gbiz-info",
+  version: "0.0.1",
+});
 
 server.tool(
   "search_gbiz_info_from_name",
   "gBiz Infoで法人名から法人情報を検索する",
-  { 
-    name: z.string()
+  {
+    name: z.string(),
   },
   async ({ name }) => {
     const params = { name: name };
@@ -46,14 +44,14 @@ server.tool(
         },
       ],
     };
-  }
+  },
 );
 
 server.tool(
   "get_gbiz_info_from_corporate_number",
   "gBiz Infoで法人番号から法人情報を取得する",
-  { 
-    coirporationNumber: z.number().min(1000000000000).max(9999999999999)
+  {
+    coirporationNumber: z.number().min(1000000000000).max(9999999999999),
   },
   async ({ coirporationNumber }) => {
     const response = await featchApi(`https://info.gbiz.go.jp/hojin/v1/hojin/${coirporationNumber}`);
@@ -66,7 +64,7 @@ server.tool(
         },
       ],
     };
-  }
+  },
 );
 
 const transport = new StdioServerTransport();
