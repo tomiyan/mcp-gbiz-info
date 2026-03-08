@@ -1,6 +1,6 @@
 {
   "name": "mcp-gbiz-info",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ModelContext Protocol Server Gbiz INFO",
   "author": "tomiyan",
   "homepage": "https://github.com/tomiyan/mcp-gbiz-info",
@@ -11,7 +11,9 @@
   "bin": {
     "mcp-gbiz-info": "dist/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && shx chmod +x dist/*.js",
     "prepare": "pnpm run build",
@@ -24,12 +26,12 @@
     "node": ">=24 <25"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.24.3",
-    "zod": "^4.1.13"
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.8",
-    "@types/node": "^24",
+    "@biomejs/biome": "^2.4.4",
+    "@types/node": "^24.11.0",
     "shx": "^0.4.0",
     "typescript": "^5.9.3"
   }
