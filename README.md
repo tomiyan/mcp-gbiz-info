@@ -19,6 +19,8 @@ gBizINFO 法人番号 MCP Server
 
 ## Claude Desktopでの利用方法
 
+設定例では、起動時に実行するバージョンを固定しています。更新する場合は、変更内容を確認してから設定内のバージョン番号を書き換えてください。
+
 1. `claude_desktop_config.json` に以下のように記述してください
 
 macOSだと `~/Library/Application Support/Claude/` にあります
@@ -30,7 +32,7 @@ macOSだと `~/Library/Application Support/Claude/` にあります
             "command": "npx",
             "args": [
                 "-y",
-                "mcp-gbiz-info@latest"
+                "mcp-gbiz-info@0.0.5"
             ],
             "env": {
                 "GBIZ_INFO_API_KEY": "<YOUR_API_TOKEN>"
@@ -57,7 +59,7 @@ macOSだと `~/Library/Application Support/Claude/` にあります
                 "command": "npx",
                 "args": [
                     "-y",
-                    "mcp-gbiz-info@latest"
+                    "mcp-gbiz-info@0.0.5"
                 ],
                 "env": {
                     "GBIZ_INFO_API_KEY": "<YOUR_API_TOKEN>"
